@@ -1,0 +1,152 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+}
+
+.heroWrapper {
+  position: absolute;
+    top: 55%;
+    left: 50%;
+  transform: translate(-50% , -50%);
+  width: 80%;
+  max-width: 40rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.heroWrapper h1, .heroWrapper h3 {
+  margin-bottom: 1.5rem;
+}
+
+
+.pointerDown {
+  position: absolute;
+    top: 90%;
+    left: 50%;
+  transform: translate(-50% , -50%);
+  width: 100%;
+  color: var(--primary);
+  text-align: center;
+}
+
+.art img:first-child {
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  transform: matrix(0.97, 0.26, -0.26, 0.97, 0, 0);
+}
+
+.art img:last-child {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 30%;
+  max-width: 200px;
+  height: auto;
+  transform: matrix(0.92, -0.39, 0.39, 0.92, 0, 0);
+}
+
+.section {
+  padding: 4em 0em;
+  transition: 0.7s;
+}
+
+.container {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20%;
+}
+
+.iCardGrid {
+  display: grid;
+  gap: 3%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.titleMain {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.techTable {
+  --cellSize: 10em;
+  margin: auto;
+}
+
+.techTable tr td {
+  border-left: 1px solid var(--primary);
+  border-right: 1px solid var(--primary);
+  padding: 2em;
+  width: 25%;
+  height: inherit;
+  max-width: var(--cellSize);
+  max-height: var(--cellSize);
+}
+
+.techTable tr {
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
+.techTable tr td img {
+  width: 100%;
+  height: auto;
+}
+
+.techTable td:last-child {
+  border-right: none !important;
+}
+
+.techTable td:first-child {
+  border-left: none !important;
+}
+
+.techTable tr:last-child {
+  border-bottom: none !important;
+}
+
+.techTable tr:first-child {
+  border-top: none !important;
+}
+
+@media screen and (max-width: 990px) {
+  .cardGrid {
+    gap: 8%;
+  }
+
+  .techTable {
+    width: 90%;
+  }
+  
+  .techTable tr td {
+    padding: 1em;
+  }
+
+  .iCardGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .section {
+    padding: 1em 0em;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10vh;
+  }
+}
