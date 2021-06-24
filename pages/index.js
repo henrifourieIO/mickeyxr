@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
-import Link from 'next/link';
 import ContentCard from '../components/ContentCard';
 import ICard from '../components/ICard';
 import ContactSection from '../components/ContactSection';
@@ -129,9 +128,7 @@ export default function Home( data ) {
 
           <div className={styles.pointerDown}>
             <Fade bottom>
-              <Link href="/">
                 <i className="fas fa-chevron-down"></i>
-              </Link>
             </Fade>
           </div>
         </section>
@@ -162,28 +159,24 @@ export default function Home( data ) {
             <div className={styles.iCardGrid}>
               <Fade bottom>
                 <ICard
-                  link="/"
                   image="/image/game-development.png"
                   title="Game dev & design"
                 />
               </Fade>
               <Fade bottom delay={100}>
                 <ICard
-                  link="/"
                   image="/image/virtual-reality-2.png"
                   title="Virtual reality"
                 />
               </Fade>
               <Fade bottom delay={200}>
                 <ICard
-                  link="/"
                   image="/image/virtual-reality.png"
                   title="Augmented reality"
                 />
               </Fade>
               <Fade bottom delay={300}>
                 <ICard
-                  link="/"
                   image="/image/Outline.png"
                   title="Mixed reality"
                 />
