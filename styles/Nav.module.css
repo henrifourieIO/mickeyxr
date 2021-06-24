@@ -1,0 +1,153 @@
+.header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--secondary);
+    z-index: 999;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainMenu {
+    transition: 1000ms;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+.burger {
+    padding: 0.5em;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+
+.active {
+    display: gird;
+    position: relative;
+}
+
+.menu {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    padding: 2em 0;
+    height: 100%;
+    padding-top: 5em;
+}
+
+.menu li, .menu span {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+    height: 24px;
+  width: 24px;
+  color: var(--primary);
+  margin-top: 1.5em;
+  margin-right: 2em;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav ul li {
+    list-style: none;
+    font-size: 2.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav ul li:hover {
+    opacity: 1;
+}
+
+.contact {
+    padding: 2em;
+    margin-top: auto;
+}
+
+.contact span {
+    font-size: 2.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 100%;
+    width: 1px;
+    background-color: var(--primary);
+    opacity: 0.5;
+    margin: 0 auto;
+}
+
+.burger {
+    background: var(--secondary);
+    border: 0;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 37px;
+}
+
+.burger div {
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    
+}
+
+.burger div:first-child {
+    width: 40%;
+    float: left;
+    transition: 0.3s;
+}
+
+.burger div:last-child {
+    width: 40%;
+    float: right;
+    align-self: flex-end;
+    transition: 0.4s;
+    transition-delay: 0.2s;
+}
+
+.burger:hover div:last-child {
+    width: 100%;
+}
+
+.burger:hover div:first-child {
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 990px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .nav ul li {
+        font-size: 1.5rem;
+    }
+
+    .contact span {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    .divider {
+        display: none;
+    }
+}

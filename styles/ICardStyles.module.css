@@ -1,0 +1,33 @@
+.imgWrapper {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+.imgWrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    color: var(--primary);
+    padding: 2em 1em;
+    border-radius: 1em;
+    transition: 0.3s;
+}
+
+.card h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card:hover {
+    -webkit-box-shadow:0px 0px 20px 0px #000000 ;
+    -moz-box-shadow:0px 0px 20px 0px #000000 ;
+    box-shadow:0px 0px 20px 0px #000000 ;
+}

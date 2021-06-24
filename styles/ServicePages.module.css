@@ -1,0 +1,224 @@
+.heroContent{
+    margin-top: 2em;
+}
+
+.heroContent p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.heroImg {
+    width: 100vh;
+    margin-top: 3em;
+}
+
+.section {
+    padding: 4em 0;
+}
+
+.mobileServices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+.mobileServices .mobileImg img {
+    width: 100%;
+}
+
+.mobileServices .serviceItem {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5%;
+    margin: 2rem 0;
+}
+
+.mobileServices .serviceItem div img {
+    width: 5rem;
+    color: var(--primary);
+}
+
+.servicesWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.devTitle {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.calList {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calList .calNum {
+    font-size: 4rem;
+    margin-right: 2rem;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20%;
+  }
+
+.iCardGrid {
+    display: grid;
+    gap: 3%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    margin-top: 3.5em;
+    gap: 5%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15%;
+    row-gap: 5%;
+}
+
+.caseGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    column-gap: 3%;
+    margin: 2em 0;
+}
+
+.caseGrid div:last-child, .caseGrid2 div:first-child {
+    padding: 2em 0;  
+}
+
+.caseGrid div:first-child, .caseGrid2 div:last-child {
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100%;
+}
+
+.caseGrid2 {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    column-gap: 3%;
+    margin: 2em 0;
+}
+
+.semiDubGrid {
+    display: grid;
+    grid-template-columns: 1fr 6fr 5fr;
+    gap: 5%;
+}
+
+.img{
+    width: 100% !important;
+    min-width: 100px;
+}
+
+.teamCardContent {
+    padding: 1em 0em;
+    text-align: center;
+}
+
+@media screen and (max-width: 990px) {
+    .gridDub {
+        grid-template-columns: 1fr;
+    }
+
+    .semiDubGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caseGrid div:first-child, .caseGrid2 div:last-child {
+        position: relative; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
+        height: 194px;
+    }
+
+    .cardGrid {
+        gap: 8%;
+      }
+    
+      .techTable {
+        width: 90%;
+      }
+      
+      .techTable tr td {
+        padding: 1em;
+      }
+    
+      .iCardGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .servicesWrapper {
+          display: block;
+      }
+    
+}
+  
+  @media screen and (max-width: 850px) {
+    .cardGrid {
+      grid-template-columns: 1fr;
+      gap: 1vh;
+    }
+
+    .caseGrid, .caseGrid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .caseGrid2 div:first-child {
+        grid-row-start: 2;
+    }
+
+    .servicesWrapper {
+        display: block;
+    }
+    
+    .mobileServices {
+        grid-template-columns: 1fr;
+    }
+
+    .heroContent p {
+        text-align: left;
+        padding-left: 1em;
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 2em 0;
+    }
+
+    .heroImg {
+        width: 100%;
+    }
+
+    .iCardGrid {
+        grid-template-columns: 1fr;
+        gap: 0%;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+  }

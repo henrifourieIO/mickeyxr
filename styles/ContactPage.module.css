@@ -1,0 +1,29 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    width: 100%;
+    gap: 5%;
+    padding: 4em 0;
+}
+
+.wrapper div {
+    width: 100%;
+}
+
+.img {
+    width: 100%;
+}
+
+.content {
+    margin-top: 2em;
+}
+
+.content p {
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 850px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
