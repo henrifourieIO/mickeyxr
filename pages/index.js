@@ -101,6 +101,9 @@ export default function Home( data ) {
 
         <section className={styles.section} >
           <div className={styles.container}>
+            <div style={{marginBottom: "2em"}}>
+              <h4>Area of Expertise</h4>
+            </div>
             <div className={styles.iCardGrid}>
               <Fade bottom>
                 <ICard
@@ -127,7 +130,7 @@ export default function Home( data ) {
                 <ICard
                   link="#"
                   image="/image/Outline.png"
-                  title="???"
+                  title="Mobile VR & AR"
                 />
               </Fade>
             </div>
@@ -139,7 +142,7 @@ export default function Home( data ) {
           <div className={styles.container}>
             <Fade bottom>
               <ContactSection
-                image="/image/wreck-ship-sunken-steamboat-ocean-sandy-bottom_107791-620.png"
+                image="/images-mic/MickeyXR2.jpg"
                 title="Ready to Chat?"
                 body="Feel free to set up a meeting or give me a shout :)"
                 button="Book A Meeting"
@@ -147,7 +150,6 @@ export default function Home( data ) {
             </Fade>
           </div>
         </section>
-
       </main>
     </>
   )
