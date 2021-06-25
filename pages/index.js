@@ -109,14 +109,14 @@ export default function Home( data ) {
                 <ICard
                   link="#"
                   image="/image/game-development.png"
-                  title="VR / AR Marketing Campaigns"
+                  title="Social AR"
                 />
               </Fade>
               <Fade bottom delay={100}>
                 <ICard
                   link="#"
                   image="/image/virtual-reality-2.png"
-                  title="Headset VR & AR"
+                  title="Headset VR & MR"
                 />
               </Fade>
               <Fade bottom delay={200}>

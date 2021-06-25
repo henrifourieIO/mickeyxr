@@ -19,7 +19,7 @@ export default function Nav(props) {
             </Lnk>
           </div>
           <div  style={{cursor: "pointer"}}>
-            <Lnk href="https://www.linkedin.com/in/mik-adler" target="_blank" >
+            <Lnk href="https://www.linkedin.com/in/mickeyxr/" target="_blank" >
               <Img src="/images-mic/linkedin-icon-18-256.png" width={35} height={35} />
             </Lnk>
           </div>
