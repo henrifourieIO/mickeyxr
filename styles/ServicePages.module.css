@@ -93,7 +93,7 @@
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     column-gap: 3%;
-    margin: 2em 0;
+    margin: 6em 0;
 }
 
 .caseGrid div:last-child, .caseGrid2 div:first-child {

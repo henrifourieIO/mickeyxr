@@ -8,27 +8,45 @@ export default function CaseStudy() {
         <section className="section">
             <div className={styles.caseGrid}>
                 <div>
-                    <Image src="/image/2220sanbs.webp" layout="fill" objectFit="contain" /></div>
+                    <Image src="/images-mic/Mik-XR.jpg" layout="fill" objectFit="contain" />
+                </div>
                 <div>
-                    <h2>Saving Lives is no game, until now!</h2>
+                    <h2>About Mickey</h2>
                     <p>
-                        The SANBS approached us to find a way to resonate with the Gen Z and younger audience. Traditional Marketing Doesn't work well on this hyper-stimulated, gaming-crazed, Digitally-enabled young generation-so we kicked it up a notch.
+                        Mickey Adler advises brave South African (& global) companies on Extended Reality (VR/AR/MR) technologies- helping them <strong>understand, adopt and implement</strong> immersive solutions, apps and games.
                     </p>
                 </div>
             </div>
 
             <div className={styles.caseGrid2}> 
                 <div>
-                    <h2>More than simply a game</h2>
+                    <h2>Virtual / Augmented Reality For Enterprise & Corporates</h2>
                     <p>
-                        It's 2021 yet some things are a little backwards.
-                        Including the games insdustry, with most main charackters being white males.
-                        So we set out to shake things up a little, byintroducing naledi- one of the very few black female lead charackters in the gaming world.
-                        Catch her sliding around in her afrofutursitic gear, in this addictive, super-casual game.
-                    </p>  
+                        <ul>
+                            <li>VR/AR education and adoption;</li>
+                            <li>VR/AR strategy development;</li>
+                            <li>VR/AR implementation and execution</li>
+                        </ul>
+                    </p>   
                 </div>
                 <div>
-                    <Image src="/image/22240.webp" layout="fill" objectFit="contain" /></div>
+                    <Image src="/image/1994.png" layout="fill" objectFit="contain" /></div>
+            </div>
+
+            <div className={styles.caseGrid}>
+                <div>
+                    <Image src="/image/123Z_2101.w020.n001.946B.p15.946.png" layout="fill" objectFit="contain" />
+                </div>
+                <div>
+                    <h2>Virtual / Augmented Reality For Brands & Agencies</h2>
+                    <p>
+                        <ul>
+                            <li>VR/AR campaign strategy</li>
+                            <li>Social VR/AR implementation</li>
+                            <li>Immersive campaign development</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
         </section>
     )
