@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Nav from '../components/Nav';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
-import ContentCard from '../components/ContentCard';
 import ICard from '../components/ICard';
 import ContactSection from '../components/ContactSection';
 import React, { useState, useEffect } from 'react';
@@ -10,49 +9,6 @@ import { createGlobalStyle } from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import CaseStudy from '../components/CaseStudy';
 import Img from 'next/image'
-
-export async function getStaticProps() {
-  const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json, text/plain, */*',
-  'User-Agent': '*', }
-  
-  const res = await fetch(`${process.env.WORDPRESS_API_URL}`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-          query: 
-          `
-              query MyQuery {
-                  page(id: "cG9zdDo3") {
-                  seo {
-                      metaDesc
-                      focuskw
-                      metaKeywords
-                      title
-                      twitterTitle
-                      twitterDescription
-                  }
-                  slug
-                  }
-              }
-          `
-      })
-  })
-
-  const json = await res.json()
-  
-
-  return {
-      props: {
-          metaDesc: json.data.page.seo.metaDesc,
-          focuskw: json.data.page.seo.focuskw,
-          metaKeywords: json.data.page.seo.metaKeywords,
-          title: json.data.page.seo.title,
-          twitterTitle: json.data.page.seo.twitterTitle,
-          twitterDescription: json.data.page.seo.twitterDescription,
-          slug: json.data.page.slug,
-      },
-  }
-}
 
 export default function Home( data ) {
 
@@ -106,13 +62,9 @@ export default function Home( data ) {
   return (
     <>
       <Head>
-        <title>{data.title}</title>
+        <title>Mickey XR</title>
         <link rel="icon" href="/image/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={data.metaDesc} />
-        <meta name="keywords" content={data.focuskw} />
-        <meta property="og:title" content={data.twitterTitle} />
-        <meta property="og:description" content={data.twitterDescription} />
       </Head>
 
 
@@ -123,7 +75,6 @@ export default function Home( data ) {
           <div className={styles.art}>
             <Fade left delay={400}><img src="/image/cube.png" /></Fade>
             <Fade right delay={300}><img src="/image/cube.png" /></Fade>
-
           </div>
 
           <div className={styles.heroWrapper}>
@@ -139,7 +90,7 @@ export default function Home( data ) {
 
           <div className={styles.pointerDown}>
             <Fade bottom>
-              <Link href="/">
+              <Link href="#">
                 <i className="fas fa-chevron-down"></i>
               </Link>
             </Fade>
