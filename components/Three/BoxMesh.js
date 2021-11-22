@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
 import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import {useSpring, animated} from 'react-spring';
+import { useSpring, a } from '@react-spring/three';
+import { useControls } from 'leva';
 
 
 export default function BoxMesh({theme , setTheme, position}) {
@@ -11,22 +12,45 @@ export default function BoxMesh({theme , setTheme, position}) {
     const [active, setActive] = useState(false);
     const color = `${theme ? "#160121" : "#fff"}`
 
+    const sizeHover = useSpring( { scale: hovered ? 2 : 1.5 } )
+
+    //Mouse Position
+    const useMousePos = () => {
+        const [mousePos, setMousePos] = useState({x: null, y: null});
+
+        const updateMousePos = ev => {
+            setMousePos({ x: ev.clientX, y: ev.clientY });
+        }
+
+        useEffect(() => {
+            window.addEventListener("mousemove", updateMousePos);
+
+            return () =>window.removeEventListener("mousemove", updateMousePos)
+        }, [])
+
+        return mousePos
+    }
+
+    const { x, y } = useMousePos();
+
     useFrame((state, delta) => (
-        mesh.current.rotation.x += 0.01,
-        mesh.current.rotation.y += 0.01,
-        mesh.current.rotation.z += 0.01
-        ))
+        mesh.current.rotation.x = x/1000,
+        mesh.current.rotation.y = y/1000,
+        mesh.current.rotation.z = x/1000
+    ))
+
+    const { geoX, geoY, geoZ } = useControls({ geoX: 1, geoY: 1, geoZ: 1 })
 
     return (
-        <mesh 
+        <a.mesh 
         ref={mesh}
-        scale={ 2 }
+        scale={ sizeHover.scale }
         onClick={(e) => setActive(!active)}
         onPointerOver={(e) => setHover(true)}
         onPointerOut={(e) => setHover(false)}
         >
-            <boxGeometry args={[1,1,1]} />
+            <boxGeometry args={[geoX, geoY, geoZ]} />
             <meshStandardMaterial color={color} />
-        </mesh>
+        </a.mesh>
     )
 }

@@ -1,0 +1,10 @@
+.blogCard {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.blogCardContent {
+    padding: 1em
+}

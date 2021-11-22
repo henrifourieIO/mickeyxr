@@ -1,41 +1,69 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/ServicePages.module.css';
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/ServicePages.module.css";
 
 export default function CaseStudy() {
+  return (
+    <section className="section">
+      <div className={`${styles.caseGrid}`} style={{marginBottom: '3em'}}>
+        <div>
+          <Image
+            src="/image/yebo-1.png"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <div>
+          <h2>About Mickey</h2>
+          <p>
+            Mickey started his formal XR career in 2016, heading up business
+            development of the EMEA region for AwakenVR. During his time there,
+            he worked on HMD VR and mobile AR projects for the likes of Warner
+            Brothers (DC Comics), Diageo, Seychelles Tourism and Rugby South
+            Africa.
+          </p>
+          <p>
+            Since then, he has spent the last five years developing himself as
+            an XR strategist, enabling companies to understand, adopt and
+            implement immersive technology solutions. His expertise spans the
+            likes of enterprise workforce productivity (MR), workforce training
+            (VR), experiential marketing (VR & mobile AR) and immersive retail
+            solutions (VR & mobile AR).
+          </p>
+          <p>
+            He has consulted and given talks on the adoption and implementation
+            of XR to a plethora of companies, including PWC Canada and Comicon
+            Africa.
+          </p>
+        </div>
+      </div>
 
-    return(
-        <section className="section">
-            <div className={styles.caseGrid}>
-                <div>
-                    <Image src="/image/2220sanbs.webp" layout="fill" objectFit="contain" /></div>
-                <div>
-                    <h2>Saving Lives is no game, until now!</h2>
-                    <p>
-                        The SANBS approached us to find a way to resonate with the Gen Z and younger audience. Traditional Marketing Doesn't work well on this hyper-stimulated, gaming-crazed, Digitally-enabled young generation-so we kicked it up a notch.
-                    </p>
-                    <Link href="/about">
-                        <button type="button" className="btn btn-outline-light">Tell Me More</button>
-                    </Link>   
-                </div>
-            </div>
+      <div className={styles.caseGrid2}>
+        <div>
+          <h2>XR STRATEGIST</h2>
+          <p>
+            Strategy, ideation and implementation of XR projects for enterprise-
+            utilizing the optimal hardware and tech stack for each unique
+            solution.
+          </p>
+        </div>
+        <div>
+          
+        </div>
+      </div>
 
-            <div className={styles.caseGrid2}> 
-                <div>
-                    <h2>More than simply a game</h2>
-                    <p>
-                        It's 2021 yet some things are a little backwards.
-                        Including the games insdustry, with most main charackters being white males.
-                        So we set out to shake things up a little, byintroducing naledi- one of the very few black female lead charackters in the gaming world.
-                        Catch her sliding around in her afrofutursitic gear, in this addictive, super-casual game.
-                    </p>
-                    <Link href="/about">
-                        <button type="button" className="btn btn-outline-light">Tell Me More</button>
-                    </Link>   
-                </div>
-                <div>
-                    <Image src="/image/22240.webp" layout="fill" objectFit="contain" /></div>
-            </div>
-        </section>
-    )
+      <div className={styles.caseGrid}>
+        <div>
+        </div>
+        <div>
+          <h2>XR UX DESIGNER</h2>
+          <p>
+            Ideation and creation of XR UX (user experience) mockups and
+            “wireframes”. Platform experience includes: ShapesXR, Adobe Aero,
+            Adobe XD (for mobile AR)
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
