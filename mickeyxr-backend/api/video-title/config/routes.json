@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/video-title",
+      "handler": "video-title.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/video-title",
+      "handler": "video-title.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/video-title",
+      "handler": "video-title.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

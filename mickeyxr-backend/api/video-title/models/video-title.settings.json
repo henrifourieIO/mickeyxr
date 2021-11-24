@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "video_titles",
+  "info": {
+    "name": "Video Title"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  }
+}

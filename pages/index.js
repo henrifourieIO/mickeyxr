@@ -12,8 +12,50 @@ import Img from 'next/image'
 import VideoCarousel from '../components/VideoCarousel';
 import BlogSection from '../components/blog/BlogSection';
 
-export default function Home( data ) {
+export async function getServerSideProps() {
+  const { API_URL } = process.env;
+  // BLogs
+  const blogsRes = await fetch(`${API_URL}/blogs`)
+  const blogs = await blogsRes.json();
 
+  // about
+  const aboutRes = await fetch(`${API_URL}/about`)
+  const about = await aboutRes.json();
+  
+  // Content Section 1
+  const cont1Res = await fetch(`${API_URL}/content-section-01`)
+  const cont1 = await cont1Res.json();
+
+  // Content Section 2
+  const cont2Res = await fetch(`${API_URL}/content-section-2`)
+  const cont2 = await cont2Res.json();
+  
+  // Blog Title
+  const blogTitleRes = await fetch(`${API_URL}/blog-title`)
+  const blogTitle = await blogTitleRes.json();
+  
+  // Video Title
+  const videoTitleRes = await fetch(`${API_URL}/video-title`)
+  const videoTitle = await videoTitleRes.json();
+
+  // Main Heading
+  const headingRes = await fetch(`${API_URL}/heading-1`)
+  const heading = await headingRes.json();
+
+  return {
+    props: {
+      blogs: blogs,
+      about: about,
+      cont1: cont1,
+      cont2: cont2,
+      blogTitle: blogTitle,
+      videoTitle: videoTitle,
+      heading: heading,
+    }
+  }
+}
+
+export default function Home( props ) {
   const [logo, setLogo] = useState("/image/logo.png")
 
   const [theme, setTheme] = useState(createGlobalStyle`
@@ -22,44 +64,7 @@ export default function Home( data ) {
     --secondary: #160121;
     }
   `)
-
-  // const listenScrollEvent = (event) => {
-  //   const scrollSnap = document.getElementById('themeSwap');
-  //   const snapPostion = scrollSnap.offsetTop - 500;
-  //   if (window.scrollY < snapPostion) {
-  //     setTheme(createGlobalStyle`
-  //       html {
-  //           --primary: #fff;
-  //           --secondary: #160121;
-  //       }
-  //       #icon {
-  //         filter: invert(0);
-  //       }
-  //   `)
-  //     setLogo("/image/logo.png")
-  //   } else if (window.scrollY > snapPostion) {
-  //     setTheme(createGlobalStyle`
-  //       html {
-  //           --primary: #160121;
-  //           --secondary: #fff;
-  //       }
-  //       #icon {
-  //         filter: invert(1);
-  //       }
-  //   `)
-  //     setLogo("/image/logo-dark.png")
-  //   }
-  // }
   const GlobalStyle = theme;
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', listenScrollEvent);
-
-  //   return () =>
-  //     window.removeEventListener('scroll', listenScrollEvent);
-  // }, []);
-
- 
 
   return (
     <>
@@ -72,7 +77,7 @@ export default function Home( data ) {
 
       <Nav />
       <GlobalStyle />
-      <main id="page-wrap">
+      <div id="page-wrap">
         <section className={styles.hero}>
           <div className={styles.art}>
             <Fade left delay={400}><img src="/image/cube.png" /></Fade>
@@ -82,7 +87,7 @@ export default function Home( data ) {
           <div className={styles.heroWrapper}>
             <Fade bottom>
               <h1>
-                Virtual, Augmented & <br/> Mixed Reality Consultant.
+                {props.heading.heading}
               </h1>
               <a href="#about">
                 <Img src="/images-mic/arrow.png" width={25} height={15} />
@@ -99,12 +104,19 @@ export default function Home( data ) {
           </div>
         </section>
 
-        <CaseStudy />
+        <CaseStudy 
+        aboutTitle={props.about.title} 
+        aboutBody={props.about.body} 
+        content1Title={props.cont1.title}
+        content1Body={props.cont1.body}
+        content2Title={props.cont2.title}
+        content2Body={props.cont2.body}
+        />
 
         <section className={styles.section} >
           <div className={styles.container}>
             <div style={{marginBottom: "2em"}}>
-              <h2>XR INSIGHTS</h2>
+              <h2>{props.videoTitle.Title}</h2>
             </div>
             <div>
               <VideoCarousel />
@@ -115,10 +127,10 @@ export default function Home( data ) {
         <section className={styles.section} >
           <div className={styles.container}>
             <div style={{marginBottom: "2em"}}>
-              <h2>XR PROJECTS</h2>
+              <h2>{props.blogTitle.title}</h2>
             </div>
             <div>
-              <BlogSection />
+              <BlogSection data={props.blogs} />
             </div>
           </div>
         </section>
@@ -135,7 +147,7 @@ export default function Home( data ) {
             </Fade>
           </div>
         </section>
-      </main>
+      </div>
     </>
   )
 }

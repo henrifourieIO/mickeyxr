@@ -2,29 +2,6 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const dummy = [
-  {
-    title: "title",
-    video_url: "https://youtu.be/ougpSaKaaHo",
-  },
-  {
-    title: "title",
-    video_url: "https://www.youtube.com/watch?v=6tmTwsi8Vrs",
-  },
-  {
-    title: "title",
-    video_url: "https://www.youtube.com/watch?v=sYR9z3hVI8I",
-  },
-  {
-    title: "title",
-    video_url: "https://www.youtube.com/watch?v=NKooG8KM-Fc",
-  },
-  {
-    title: "title",
-    video_url: "https://www.youtube.com/watch?v=kJJh2Bs4Tsg",
-  },
-];
-
 const carouselConfig = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -36,41 +13,47 @@ const carouselConfig = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 2,
+    items: 1,
   },
 };
 
-function YouTubeGetID(url) {
-  var ID = "";
-  url = url
-    .replace(/(>|<)/gi, "")
-    .split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-  if (url[2] !== undefined) {
-    ID = url[2].split(/[^0-9a-z_\-]/i);
-    ID = ID[0];
-  } else {
-    ID = url;
-  }
-  return ID;
-}
+// function YouTubeGetID(url) {
+//   var ID = "";
+//   url = url
+//     .replace(/(>|<)/gi, "")
+//     .split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+//   if (url[2] !== undefined) {
+//     ID = url[2].split(/[^0-9a-z_\-]/i);
+//     ID = ID[0];
+//   } else {
+//     ID = url;
+//   }
+//   return ID;
+// }
 
 export default function VideoCarousel() {
   return (
     <Carousel responsive={carouselConfig}>
-      {dummy.map((item, index) => (
-        <div key={index} style={{padding: '0 1em'}}>
+        <div style={{padding: '0 1em'}}>
           <iframe
             style={{ width: "100%", height: "184px" }}
-            src={`https://youtube.com/embed/${YouTubeGetID(item.video_url)}`}
+            src={`https://youtube.com/embed/ougpSaKaaHo'}`}
             frameborder="0"
             ng-show="showvideo"
           />
         </div>
-      ))}
+        <div style={{padding: '0 1em'}}>
+          <video 
+          type="video/mp4" 
+          src={'https://demio-accounts-s3-cdn.demio.com/0e51663f-496d-473d-94d6-68389bac72e7/recordings/1934795/recording-1934795.mp4'} 
+          controls 
+          style={{ width: "100%", height: "184px" }} 
+          />
+        </div>
     </Carousel>
   );
 }

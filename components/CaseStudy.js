@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/ServicePages.module.css";
 
-export default function CaseStudy() {
+export default function CaseStudy({
+  aboutTitle, 
+  aboutBody, 
+  content1Title, 
+  content1Body, 
+  content2Title, 
+  content2Body}) {
   return (
     <section className="section">
       <div className={`${styles.caseGrid}`} style={{marginBottom: '3em'}}>
@@ -14,37 +20,16 @@ export default function CaseStudy() {
           />
         </div>
         <div>
-          <h2>About Mickey</h2>
-          <p>
-            Mickey started his formal XR career in 2016, heading up business
-            development of the EMEA region for AwakenVR. During his time there,
-            he worked on HMD VR and mobile AR projects for the likes of Warner
-            Brothers (DC Comics), Diageo, Seychelles Tourism and Rugby South
-            Africa.
-          </p>
-          <p>
-            Since then, he has spent the last five years developing himself as
-            an XR strategist, enabling companies to understand, adopt and
-            implement immersive technology solutions. His expertise spans the
-            likes of enterprise workforce productivity (MR), workforce training
-            (VR), experiential marketing (VR & mobile AR) and immersive retail
-            solutions (VR & mobile AR).
-          </p>
-          <p>
-            He has consulted and given talks on the adoption and implementation
-            of XR to a plethora of companies, including PWC Canada and Comicon
-            Africa.
-          </p>
+          <h2>{aboutTitle}</h2>
+          <p>{aboutBody}</p>
         </div>
       </div>
 
       <div className={styles.caseGrid2}>
         <div>
-          <h2>XR STRATEGIST</h2>
+          <h2>{content1Title}</h2>
           <p>
-            Strategy, ideation and implementation of XR projects for enterprise-
-            utilizing the optimal hardware and tech stack for each unique
-            solution.
+            {content1Body}
           </p>
         </div>
         <div>
@@ -56,11 +41,9 @@ export default function CaseStudy() {
         <div>
         </div>
         <div>
-          <h2>XR UX DESIGNER</h2>
+          <h2>{content2Title}</h2>
           <p>
-            Ideation and creation of XR UX (user experience) mockups and
-            “wireframes”. Platform experience includes: ShapesXR, Adobe Aero,
-            Adobe XD (for mobile AR)
+            {content2Body}
           </p>
         </div>
       </div>

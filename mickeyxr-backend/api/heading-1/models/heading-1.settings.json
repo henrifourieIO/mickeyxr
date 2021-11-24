@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "heading_1s",
+  "info": {
+    "name": "Heading 1"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    }
+  }
+}

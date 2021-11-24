@@ -1,4 +1,5 @@
 node_modules
+mickeyxr-backend
 .env.local
 out
 .next
