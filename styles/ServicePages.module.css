@@ -79,6 +79,7 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     margin-top: 3.5em;
+    margin-bottom: 4em;
     gap: 5%;
 }
 
@@ -93,7 +94,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 3%;
-    margin: 1em 0;
+    margin: 4em 0;
 }
 
 
@@ -109,7 +110,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     column-gap: 3%;
-    margin: 1em 0;
+    margin: 4em 0;
 }
 
 .semiDubGrid {

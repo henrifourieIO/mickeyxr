@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/ServicePages.module.css";
+import Fade from 'react-reveal/Fade';
 
 export default function CaseStudy({
   aboutTitle, 
@@ -11,6 +12,7 @@ export default function CaseStudy({
   content2Body}) {
   return (
     <section className="section">
+      <Fade>
       <div className={`${styles.caseGrid}`} style={{marginBottom: '3em'}}>
         <div>
           <Image
@@ -24,7 +26,9 @@ export default function CaseStudy({
           <p>{aboutBody}</p>
         </div>
       </div>
-
+      </Fade>
+      
+      <Fade>
       <div className={styles.caseGrid2}>
         <div>
           <h2>{content1Title}</h2>
@@ -36,7 +40,8 @@ export default function CaseStudy({
           
         </div>
       </div>
-
+      </Fade>
+      <Fade>
       <div className={styles.caseGrid}>
         <div>
         </div>
@@ -47,6 +52,7 @@ export default function CaseStudy({
           </p>
         </div>
       </div>
+      </Fade>
     </section>
   );
 }

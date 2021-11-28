@@ -47,11 +47,11 @@ export default function VideoCarousel() {
           />
         </div>
         <div style={{padding: '0 1em'}}>
-          <video 
-          type="video/mp4" 
-          src={'https://demio-accounts-s3-cdn.demio.com/0e51663f-496d-473d-94d6-68389bac72e7/recordings/1934795/recording-1934795.mp4'} 
-          controls 
-          style={{ width: "100%", height: "184px" }} 
+        <iframe
+            style={{ width: "100%", height: "184px" }}
+            src={`https://youtube.com/embed/_Ax2bVAW3DY'}`}
+            frameborder="0"
+            ng-show="showvideo"
           />
         </div>
     </Carousel>
