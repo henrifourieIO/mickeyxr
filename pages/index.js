@@ -46,6 +46,10 @@ export async function getServerSideProps() {
   const contactRes = await fetch(`${API_URL}/contact-area`);
   const contactArea = await contactRes.json();
 
+  // Videos
+  const videosRes = await fetch(`${API_URL}/videos`);
+  const videos = await videosRes.json();
+
   return {
     props: {
       blogs: blogs,
@@ -56,6 +60,7 @@ export async function getServerSideProps() {
       videoTitle: videoTitle,
       heading: heading,
       contactArea: contactArea,
+      videos: videos,
     },
   };
 }
@@ -128,7 +133,7 @@ export default function Home(props) {
                 <h2>{props.videoTitle.Title}</h2>
               </div>
               <div>
-                <VideoCarousel />
+                <VideoCarousel data={props.videos} />
               </div>
             </div>
           </section>

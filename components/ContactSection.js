@@ -7,7 +7,7 @@ export default function ContactSection(props) {
     return (
         <div className={ ConSeStyles.wrapper }>
             <div style={{display: "flex", justifyContent: "center"}}>
-                <img src={ API_URL + props.image } width={400} height={430} alt={ props.alt } />
+                <img src={ API_URL + props.image } style={{width: '100%'}} alt={ props.alt } />
             </div>
 
             <div>
