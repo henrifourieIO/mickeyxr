@@ -18,49 +18,19 @@ export async function getServerSideProps() {
   const blogsRes = await fetch(`${API_URL}/blogs`);
   const blogs = await blogsRes.json();
 
-  // about
-  const aboutRes = await fetch(`${API_URL}/about`);
-  const about = await aboutRes.json();
-
-  // Content Section 1
-  const cont1Res = await fetch(`${API_URL}/content-section-01`);
-  const cont1 = await cont1Res.json();
-
-  // Content Section 2
-  const cont2Res = await fetch(`${API_URL}/content-section-2`);
-  const cont2 = await cont2Res.json();
-
-  // Blog Title
-  const blogTitleRes = await fetch(`${API_URL}/blog-title`);
-  const blogTitle = await blogTitleRes.json();
-
-  // Video Title
-  const videoTitleRes = await fetch(`${API_URL}/video-title`);
-  const videoTitle = await videoTitleRes.json();
-
-  // Main Heading
-  const headingRes = await fetch(`${API_URL}/heading-1`);
-  const heading = await headingRes.json();
-
-  // Contact Area
-  const contactRes = await fetch(`${API_URL}/contact-area`);
-  const contactArea = await contactRes.json();
-
   // Videos
   const videosRes = await fetch(`${API_URL}/videos`);
   const videos = await videosRes.json();
 
+  // Homepage Content
+  const contentRes = await fetch(`${API_URL}/homepage-content`);
+  const content = await contentRes.json();
+
   return {
     props: {
       blogs: blogs,
-      about: about,
-      cont1: cont1,
-      cont2: cont2,
-      blogTitle: blogTitle,
-      videoTitle: videoTitle,
-      heading: heading,
-      contactArea: contactArea,
       videos: videos,
+      content: content,
     },
   };
 }
@@ -99,7 +69,7 @@ export default function Home(props) {
 
           <div className={styles.heroWrapper}>
             <Fade bottom>
-              <h1>{props.heading.heading}</h1>
+              <h1>{props.content.hero_text}</h1>
               <a href="#about">
                 <Img src="/images-mic/arrow.png" width={25} height={15} />
               </a>
@@ -116,51 +86,51 @@ export default function Home(props) {
         </section>
         <section style={{marginBottom: '4em'}}>
           <CaseStudy
-            aboutTitle={props.about.title}
-            aboutBody={props.about.body}
-            content1Title={props.cont1.title}
-            content1Body={props.cont1.body}
-            content2Title={props.cont2.title}
-            content2Body={props.cont2.body}
+            aboutTitle={props.content.about_title}
+            aboutBody={props.content.about_body}
+            content1Title={props.content.section_1_title}
+            content1Body={props.content.content_1_body}
+            content2Title={props.content.content_2_title}
+            content2Body={props.content.content_2_body}
           />
         </section>
         
 
-        <Fade>
+        {props.videos ? <Fade>
           <section className={styles.section} style={{marginBottom: '4em'}}>
             <div className={styles.container}>
               <div style={{ marginBottom: "2em" }}>
-                <h2>{props.videoTitle.Title}</h2>
+                <h2>{props.content.videos_title}</h2>
               </div>
               <div>
-                <VideoCarousel data={props.videos} />
+                <VideoCarousel data={props.videos} /> 
               </div>
             </div>
           </section>
-        </Fade>
+        </Fade>: null}
 
-        <Fade>
+        {props.blogs ? <Fade>
           <section className={styles.section} style={{marginBottom: '4em'}}>
             <div className={styles.container}>
               <div style={{ marginBottom: "2em" }}>
-                <h2>{props.blogTitle.title}</h2>
+                <h2>{props.content.blogs_title}</h2>
               </div>
               <div>
                 <BlogSection data={props.blogs} />
               </div>
             </div>
           </section>
-        </Fade>
+        </Fade> : null}
 
         <section className={styles.section}>
           <div className={styles.container}>
             <Fade bottom>
               <ContactSection
-                image={props.contactArea.image.url}
-                title={props.contactArea.title}
-                body={props.contactArea.body}
+                image={'/image/yebo-2.png'}
+                title={props.content.contact_title}
+                body={props.content.contact_body}
                 button="Book A Meeting"
-                button_url={props.contactArea.button_url}
+                button_url={props.content.contact_button_url}
               />
             </Fade>
           </div>

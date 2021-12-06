@@ -13,7 +13,7 @@ export default function BlogCard({title, snipet, image, slug}) {
             <div className={styles.blogCardContent}>
                 <h3>{title}</h3>
                 <p>{snipet}</p>
-                <Link href={`/blog/${slug}`}>
+                <Link href={`/blog/${encodeURIComponent(slug)}`}>
                     <a style={{cursor: 'pointer'}}>Continue Reading >></a>
                 </Link>
             </div>
