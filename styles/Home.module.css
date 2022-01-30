@@ -6,24 +6,49 @@
 .heroWrapper {
   position: absolute;
     top: 55%;
-    left: 50%;
-  transform: translate(-50% , -50%);
+    left: 5%;
+  transform: translate(0 , -50%);
   width: 80%;
-  max-width: 40rem;
-  text-align: center;
+  max-width: 55rem;
+  text-align: left;
   color: var(--primary);
+}
+
+.canvas {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(22,1,33,1) 0%, rgba(22,1,33,0) 100%);
 }
 
 .heroWrapper h1, .heroWrapper h3 {
   margin-bottom: 1.5rem;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid div {
+  max-width: 100%;
+}
 
 .pointerDown {
   position: absolute;
-    top: 90%;
+    bottom: 8px;
     left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(0 , 0) rotate(90deg);
   width: 100%;
   color: var(--primary);
   text-align: center;
@@ -148,6 +173,14 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 10vh;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas {
+    width: 80%;
   }
 }
 

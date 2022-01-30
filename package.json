@@ -12,15 +12,15 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@react-spring/three": "^9.2.1",
-    "@react-three/fiber": "^6.2.2",
-    "@react-three/flex": "^0.6.0",
+    "@react-three/drei": "^8.8.0",
+    "@react-three/fiber": "^7.0.26",
     "axios": "^0.24.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^5.0.0-beta3",
     "emailjs-com": "^2.6.4",
     "leva": "^0.9.10",
     "next": "^10.2.2",
+    "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-burger-menu": "^3.0.6",
@@ -31,6 +31,9 @@
     "react-reveal": "^1.2.2",
     "react-spring": "^9.2.1",
     "styled-components": "^5.3.0",
-    "three": "^0.129.0"
+    "three": "^0.137.5"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

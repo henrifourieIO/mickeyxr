@@ -1,45 +1,19 @@
 import Head from "next/head";
 import Nav from "../components/Nav";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import ICard from "../components/ICard";
 import ContactSection from "../components/ContactSection";
 import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
 import Fade from "react-reveal/Fade";
 import CaseStudy from "../components/CaseStudy";
-import Img from "next/image";
-import VideoCarousel from "../components/VideoCarousel";
 import BlogSection from "../components/blog/BlogSection";
-
-export async function getServerSideProps() {
-  const { API_URL } = process.env;
-  // BLogs
-  const blogsRes = await fetch(`${API_URL}/blogs`);
-  const blogs = await blogsRes.json();
-
-  // Videos
-  const videosRes = await fetch(`${API_URL}/videos`);
-  const videos = await videosRes.json();
-
-  // Homepage Content
-  const contentRes = await fetch(`${API_URL}/homepage-content`);
-  const content = await contentRes.json();
-
-  return {
-    props: {
-      blogs: blogs,
-      videos: videos,
-      content: content,
-    },
-  };
-}
+import Hero from "../components/Hero";
 
 export default function Home(props) {
   const [logo, setLogo] = useState("/image/logo.png");
 
   const [theme, setTheme] = useState(createGlobalStyle`
-    html {
+  html {
     --primary: #fff;
     --secondary: #160121;
     }
@@ -57,80 +31,57 @@ export default function Home(props) {
       <Nav />
       <GlobalStyle />
       <div id="page-wrap">
-        <section className={styles.hero} style={{marginBottom: '4em'}}>
-          <div className={styles.art}>
-            <Fade left delay={400}>
-              <img src="/image/cube.png" />
-            </Fade>
-            <Fade right delay={300}>
-              <img src="/image/cube.png" />
-            </Fade>
-          </div>
+        <Hero />
 
-          <div className={styles.heroWrapper}>
-            <Fade bottom>
-              <h1>{props.content.hero_text}</h1>
-              <a href="#about">
-                <Img src="/images-mic/arrow.png" width={25} height={15} />
-              </a>
-            </Fade>
-          </div>
-
-          <div className={styles.pointerDown}>
-            <Fade bottom>
-              <a href="#about">
-                <i className="fas fa-chevron-down"></i>
-              </a>
-            </Fade>
-          </div>
-        </section>
-        <section style={{marginBottom: '4em'}}>
+        <section style={{ marginBottom: "4em" }}>
           <CaseStudy
-            aboutTitle={props.content.about_title}
-            aboutBody={props.content.about_body}
-            content1Title={props.content.section_1_title}
-            content1Body={props.content.content_1_body}
-            content2Title={props.content.content_2_title}
-            content2Body={props.content.content_2_body}
+            aboutTitle={"ABOUT MICKEY"}
+            aboutBody="
+              Mickey started his formal XR career in 2016, heading up business development of the EMEA region 
+              for AwakenVR. During his time there, he worked on HMD VR and mobile AR projects for the likes 
+              of Warner Brothers (DC Comics), Diageo, Seychelles Tourism and Rugby South Africa.
+              <br><br>
+              Since then, he has spent the last five years developing himself as an XR strategist, enabling 
+              companies to understand, adopt and implement immersive technology solutions. His expertise spans 
+              the likes of enterprise workforce productivity (MR), workforce training (VR), experiential marketing 
+              (VR & mobile AR) and immersive retail solutions (VR & mobile AR).
+              <br><br>
+              He has consulted and given talks on the adoption and implementation of XR to a plethora of companies, 
+              including PWC Canada and Comicon Africa.
+              "
+            content1Title={"XR STRATEGIST"}
+            content1Body={
+              "Strategy, ideation and implementation of XR projects for enterprise- utilizing the optimal hardware and tech stack for each unique solution."
+            }
+            content2Title={"XR UX DESIGNER"}
+            content2Body={
+              "Ideation and creation of XR UX (user experience) mockups and “wireframes”. Platform experience includes: ShapesXR, Adobe Aero, Adobe XD (for mobile AR)"
+            }
           />
         </section>
-        
 
-        {props.videos ? <Fade>
-          <section className={styles.section} style={{marginBottom: '4em'}}>
+        <Fade>
+          <div style={{ marginBottom: "6em" }}>
             <div className={styles.container}>
               <div style={{ marginBottom: "2em" }}>
-                <h2>{props.content.videos_title}</h2>
+                <h2>XR Insights</h2>
               </div>
               <div>
-                <VideoCarousel data={props.videos} /> 
+                <BlogSection />
               </div>
             </div>
-          </section>
-        </Fade>: null}
+          </div>
+        </Fade>
 
-        {props.blogs ? <Fade>
-          <section className={styles.section} style={{marginBottom: '4em'}}>
-            <div className={styles.container}>
-              <div style={{ marginBottom: "2em" }}>
-                <h2>{props.content.blogs_title}</h2>
-              </div>
-              <div>
-                <BlogSection data={props.blogs} />
-              </div>
-            </div>
-          </section>
-        </Fade> : null}
-
-        <section className={styles.section}>
+        <section>
           <div className={styles.container}>
             <Fade bottom>
               <ContactSection
-                image={'/image/yebo-2.png'}
-                title={props.content.contact_title}
-                body={props.content.contact_body}
+                image={"/image/yebo-2.png"}
+                title={"READY TO CHAT?"}
+                body={"Feel free to set up a meeting or give me a shout :)"}
                 button="Book A Meeting"
-                button_url={props.content.contact_button_url}
+                button_url={"#"}
               />
             </Fade>
           </div>

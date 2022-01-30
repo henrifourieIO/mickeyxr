@@ -5,15 +5,15 @@ import "react-multi-carousel/lib/styles.css";
 const carouselConfig = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 1,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -38,20 +38,16 @@ function YouTubeGetID(url) {
 export default function VideoCarousel(data) {
   return (
     <>
-      {data ? (
-        <Carousel responsive={carouselConfig}>
-          {data.data.map((item, index) => (
-            <div key={index} style={{ padding: "0 1em" }}>
-              <iframe
-                style={{ width: "100%", height: "184px" }}
-                src={`https://youtube.com/embed/${YouTubeGetID(item.url)}`}
-                frameborder="0"
-                ng-show="showvideo"
-              />
-            </div>
-          ))}
-        </Carousel>
-      ) : null}
+      <Carousel responsive={carouselConfig}>
+        <div style={{ padding: "0 1em" }}>
+          <iframe
+            style={{ width: "100%", height: "184px" }}
+            src={`https://youtube.com/embed/${YouTubeGetID("https://youtu.be/ougpSaKaaHo")}`}
+            frameborder="0"
+            ng-show="showvideo"
+          />
+        </div>
+      </Carousel>
     </>
   );
 }
