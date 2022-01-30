@@ -13,7 +13,7 @@ export default function ContactSection(props) {
             <div>
                 <h4>{ props.title }</h4>
                 <p>{ props.body }</p>
-                <a href={props.button_url} >
+                <a href={props.button_url} target={"_blank"} >
                     <button className="btn btn-outline-light">{ props.button }</button>
                 </a>
             </div>

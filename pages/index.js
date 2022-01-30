@@ -81,7 +81,7 @@ export default function Home(props) {
                 title={"READY TO CHAT?"}
                 body={"Feel free to set up a meeting or give me a shout :)"}
                 button="Book A Meeting"
-                button_url={"#"}
+                button_url={"https://calendly.com/mickeyxr/15min"}
               />
             </Fade>
           </div>

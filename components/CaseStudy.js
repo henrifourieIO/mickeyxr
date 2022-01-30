@@ -36,15 +36,14 @@ export default function CaseStudy({
               <h2>{content1Title}</h2>
               <p>{content1Body}</p>
             </div>
-            <div></div>
           </div>
         </Fade>
         <Fade>
           <div>
-            <div></div>
             <div>
               <h2>{content2Title}</h2>
               <p>{content2Body}</p>
+              <img src="/image/AIXR_Member_Round_Badge.png" style={{width: '80%', maxWidth: '200px'}} />
             </div>
           </div>
         </Fade>
