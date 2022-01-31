@@ -9,7 +9,7 @@
     left: 5%;
   transform: translate(0 , -50%);
   width: 80%;
-  max-width: 55rem;
+  max-width: 42rem;
   text-align: left;
   color: var(--primary);
   z-index: 5;

@@ -1,19 +1,20 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Fade } from "react-reveal";
 
 const carouselConfig = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 1,
+    items: 5,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1,
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -40,12 +41,35 @@ export default function VideoCarousel(data) {
     <>
       <Carousel responsive={carouselConfig}>
         <div style={{ padding: "0 1em" }}>
+        <Fade>
           <iframe
             style={{ width: "100%", height: "184px" }}
             src={`https://youtube.com/embed/${YouTubeGetID("https://youtu.be/ougpSaKaaHo")}`}
             frameborder="0"
             ng-show="showvideo"
           />
+          </Fade>
+        </div>
+        <div style={{ padding: "0 1em" }}>
+          <Fade delay={300}>
+            <iframe
+              style={{ width: "100%", height: "184px" }}
+              src={`https://youtube.com/embed/${YouTubeGetID("https://youtu.be/_Ax2bVAW3DY")}`}
+              frameborder="0"
+              ng-show="showvideo"
+            />
+          </Fade>
+          
+        </div>
+        <div style={{ padding: "0 1em" }}>
+        <Fade delay={600}>
+          <iframe
+            style={{ width: "100%", height: "184px" }}
+            src={`https://youtube.com/embed/${YouTubeGetID("https://youtu.be/5sYwLkeKuJQ")}`}
+            frameborder="0"
+            ng-show="showvideo"
+          />
+          </Fade>
         </div>
       </Carousel>
     </>

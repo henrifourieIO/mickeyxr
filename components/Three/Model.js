@@ -1,77 +1,55 @@
-
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber';
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/3d-object.glb')
-
-  useFrame(() => (group.current.rotation.y += 0.004))
-
+  const { nodes, materials } = useGLTF('/vuzix-re2-hipoly.glb')
+  // useFrame(() => {group.current.rotation.y += 0.005})
   return (
     <group ref={group} {...props} dispose={null}>
-      
-      <primitive object={nodes.Hips} />
-      <skinnedMesh
-        name="EyeLeft"
-        geometry={nodes.EyeLeft.geometry}
-        material={nodes.EyeLeft.material}
-        skeleton={nodes.EyeLeft.skeleton}
-        morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
-        morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.glasses.geometry}
+        material={materials.glass}
+        position={[0, 0, 0.02]}
       />
-      <skinnedMesh
-        name="EyeRight"
-        geometry={nodes.EyeRight.geometry}
-        material={nodes.EyeRight.material}
-        skeleton={nodes.EyeRight.skeleton}
-        morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
-        morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.rubber.geometry}
+        material={materials['plast mass rubber']}
+        position={[0, 0, 0.02]}
       />
-      <skinnedMesh
-        name="Wolf3D_Head"
-        geometry={nodes.Wolf3D_Head.geometry}
-        material={materials.Wolf3D_Skin}
-        skeleton={nodes.Wolf3D_Head.skeleton}
-        morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
-        morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
-      />
-      <skinnedMesh
-        name="Wolf3D_Teeth"
-        geometry={nodes.Wolf3D_Teeth.geometry}
-        material={materials.Wolf3D_Teeth}
-        skeleton={nodes.Wolf3D_Teeth.skeleton}
-        morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
-        morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
-      />
-      <skinnedMesh
-        geometry={nodes.Wolf3D_Hair.geometry}
-        material={materials.Wolf3D_Hair}
-        skeleton={nodes.Wolf3D_Hair.skeleton}
-      />
-      <skinnedMesh
-        geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
-        material={materials.Wolf3D_Outfit_Footwear}
-        skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
-      />
-      <skinnedMesh
-        geometry={nodes.Wolf3D_Outfit_Top.geometry}
-        material={materials.Wolf3D_Outfit_Top}
-        skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
-      />
-      <skinnedMesh
-        geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
-        material={materials.Wolf3D_Outfit_Bottom}
-        skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
-      />
-      <skinnedMesh
-        geometry={nodes.Wolf3D_Body.geometry}
-        material={materials.Wolf3D_Body}
-        skeleton={nodes.Wolf3D_Body.skeleton}
-      />
+      <group position={[0, 0, 0.02]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane009.geometry}
+          material={materials['plast mass']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane009_1.geometry}
+          material={materials['plast mass glossy']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane009_2.geometry}
+          material={materials['camera lens']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane009_3.geometry}
+          material={materials['camera eye']}
+        />
+      </group>
     </group>
   )
 }
 
-useGLTF.preload('/3d-object.glb')
+useGLTF.preload('/vuzix-re2-hipoly.glb')

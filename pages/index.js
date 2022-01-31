@@ -8,6 +8,7 @@ import Fade from "react-reveal/Fade";
 import CaseStudy from "../components/CaseStudy";
 import BlogSection from "../components/blog/BlogSection";
 import Hero from "../components/Hero";
+import VideoCarousal from '../components/VideoCarousel';
 
 export default function Home(props) {
   const [logo, setLogo] = useState("/image/logo.png");
@@ -61,10 +62,22 @@ export default function Home(props) {
         </section>
 
         <Fade>
-          <div style={{ marginBottom: "6em" }}>
+          <div style={{ marginBottom: "12em" }}>
             <div className={styles.container}>
               <div style={{ marginBottom: "2em" }}>
                 <h2>XR Insights</h2>
+              </div>
+              <div>
+                <VideoCarousal />
+              </div>
+            </div>
+          </div>
+        </Fade>
+        <Fade>
+          <div style={{ marginBottom: "12em" }}>
+            <div className={styles.container}>
+              <div style={{ marginBottom: "2em" }}>
+                <h2>XR Projects</h2>
               </div>
               <div>
                 <BlogSection />

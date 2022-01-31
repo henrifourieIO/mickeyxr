@@ -29,7 +29,7 @@ export default function CaseStudy({
         </div>
       </Fade>
 
-      <div className={styles.grid} style={{marginTop: "6em"}}>
+      <div className={styles.grid} style={{marginTop: "12em", marginBottom: '12em'}}>
         <Fade>
           <div>
             <div>
@@ -38,12 +38,19 @@ export default function CaseStudy({
             </div>
           </div>
         </Fade>
-        <Fade>
+        <Fade delay={300}>
           <div>
             <div>
               <h2>{content2Title}</h2>
               <p>{content2Body}</p>
-              <img src="/image/AIXR_Member_Round_Badge.png" style={{width: '80%', maxWidth: '200px'}} />
+              
+            </div>
+          </div>
+        </Fade>
+        <Fade delay={600}>
+          <div>
+            <div style={{display: "flex", justifyContent: 'center'}} >
+            <img src="/image/AIXR_Member_Round_Badge.png" style={{width: '70%'}} />
             </div>
           </div>
         </Fade>

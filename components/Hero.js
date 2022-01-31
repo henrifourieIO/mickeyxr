@@ -2,7 +2,7 @@ import styles from "../styles/Home.module.css";
 import Fade from "react-reveal/Fade";
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, OrthographicCamera   } from "@react-three/drei";
 
 import Model from "./Three/Model";
 
@@ -19,11 +19,12 @@ export default function Hero() {
         <div className={styles.canvas}>
             
           <Canvas>
-            <OrbitControls enableZoom={false}  />
+            <OrbitControls enableZoom={false} autoRotate />
             <ambientLight />
-            <pointLight position={[10, 10, 10]} />
+            <pointLight position={[10, 10, 10]} color={'#2211ff'}  />
+            <pointLight position={[-10, 10, 10]} color={'#fff'}  />
             <Suspense fallback={null}>
-              <Model position={[0, -5, 0]} scale={4} rotation={[0, 0, 0]} />
+              <Model position={[0, 0, 1.8]} scale={4.2} rotation={[0, 0, 0]} />
             </Suspense>
           </Canvas>
           <div className={styles.fade} />
