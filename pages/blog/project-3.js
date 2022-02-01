@@ -29,7 +29,7 @@ export default function blog(props) {
   return (
     <div style={{ width: "80%", maxWidth: "680px", margin: "2em auto" }}>
       <div>
-        <h1 style={{ marginBottom: "8px" }}>Project: Dexter's Shrink-Ray Experience</h1>
+        <h1 style={{ marginBottom: "8px" }}>Project: Vespa V-Commerce (UX Concept) </h1>
         <img src={"/image/project-2.png"} style={{width: '100%'}} />
       </div>
       <div
@@ -38,8 +38,8 @@ export default function blog(props) {
           paddingTop: "1em",
         }}
       >
-        <p>An immersive, shrunken-down experience illustrating how VR can warp perceptions and entertain beyond belief.</p>
-        <a href={"https://www.dexters-vr.com/"} target={"_blank"} >
+        <p>A virtual reality e-commerce (v-commerce) UX concept for Vespa. A truly immersive scooter shopping experience.</p>
+        <a href={"https://shapes.app/#/spaces/1900f7f7-0294-4d8e-903e-cdbbf981b367/585ds9"} target={"_blank"} >
                     <button className="btn btn-outline-light">Check it Out</button>
                 </a>
       </div>

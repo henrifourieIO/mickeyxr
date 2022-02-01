@@ -30,17 +30,22 @@ function BlogSection(data) {
         <Carousel responsive={carouselConfig} style={{ padding: "1em" }}>
           <div style={{ padding: "3px 8px" }}>
             <Fade>
-              <BlogCard title={"Project: ShapesXR"} snipet={"The Future of Media Consumption will have some stark similarities to the way we consume media today."} image={"/image/project-1.png"} slug={"project-1"} />
+              <BlogCard title={"Project: The Future Of Media Consumption UX"} snipet={"Exploring the future of media consumption with the use of XR (extended reality)"} image={"/image/project-1.png"} slug={"project-1"} />
             </Fade>
           </div>
           <div style={{ padding: "3px 8px" }}>
             <Fade delay={300}>
-              <BlogCard title={"Project: DexterVR"} snipet={"Get Ready For A Honey I  Shrunk  The  Kids-Type  VR  Experience."} image={"/image/project-2.png"} slug={"project-2"} />
+              <BlogCard title={"Project: Dexter's Shrink-Ray Experience"} snipet={"An immersive, shrunken-down experience illustrating how VR can warp perceptions and entertain beyond belief."} image={"/image/project-2.png"} slug={"project-2"} />
             </Fade>
           </div>
           <div style={{ padding: "3px 8px" }}>
             <Fade delay={600}>
-              <BlogCard title={"EXPERIENTIAL TECHNOLOGY FOR LUXURY BRANDS"} snipet={"Persuading a customer to buy a branded, high-ticket item in-store is difficult enough, let alone trying to do so online."} image={"/image/Insights-for-blog-thumbnail.png"} slug={"experiential-tech-for-luxury-brands"} />
+              <BlogCard title={"Project: Experiential Technology for immersive brands"} snipet={"Exploring the use of augmented reality, immersive landing pages, avatars and NFTs for luxury brands to drive e-commerce sales today."} image={"/image/Insights-for-blog-thumbnail.png"} slug={"experiential-tech-for-luxury-brands"} />
+            </Fade>
+          </div>
+          <div style={{ padding: "3px 8px" }}>
+            <Fade delay={600}>
+              <BlogCard title={"Project: Vespa V-Commerce (UX Concept)"} snipet={"A virtual reality e-commerce (v-commerce) UX concept for Vespa. A truly immersive scooter shopping experience."} image={"/image/Insights-for-blog-thumbnail.png"} slug={"project-3"} />
             </Fade>
           </div>
         </Carousel>

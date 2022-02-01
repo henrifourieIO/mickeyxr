@@ -29,7 +29,7 @@ export default function blog(props) {
   return (
     <div style={{ width: "80%", maxWidth: "680px", margin: "2em auto" }}>
       <div>
-        <h1 style={{ marginBottom: "8px" }}>Project: ShapesXR</h1>
+        <h1 style={{ marginBottom: "8px" }}>Project: The Future Of Media Consumption UX</h1>
         <img src={"/image/project-1.png"} style={{width: '100%'}} />
       </div>
       <div
@@ -38,7 +38,7 @@ export default function blog(props) {
           paddingTop: "1em",
         }}
       >
-        <p>The Future of Media Consumption will have some stark similarities to the way we consume media today.</p>
+        <p>Exploring the future of media consumption with the use of XR (extended reality)</p>
         <a href={"https://shapes.app/#/spaces/cd65209d-d620-4ed3-af86-ae22fed45c30/4a7677"} target={"_blank"} >
                     <button className="btn btn-outline-light">Check it Out</button>
                 </a>
