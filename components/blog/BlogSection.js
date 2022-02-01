@@ -45,7 +45,7 @@ function BlogSection(data) {
           </div>
           <div style={{ padding: "3px 8px" }}>
             <Fade delay={600}>
-              <BlogCard title={"Project: Vespa V-Commerce (UX Concept)"} snipet={"A virtual reality e-commerce (v-commerce) UX concept for Vespa. A truly immersive scooter shopping experience."} image={"/image/Insights-for-blog-thumbnail.png"} slug={"project-3"} />
+              <BlogCard title={"Project: Vespa V-Commerce (UX Concept)"} snipet={"A virtual reality e-commerce (v-commerce) UX concept for Vespa. A truly immersive scooter shopping experience."} image={"/image/vespa.png"} slug={"project-3"} />
             </Fade>
           </div>
         </Carousel>

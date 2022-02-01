@@ -30,7 +30,7 @@ export default function blog(props) {
     <div style={{ width: "80%", maxWidth: "680px", margin: "2em auto" }}>
       <div>
         <h1 style={{ marginBottom: "8px" }}>Project: Vespa V-Commerce (UX Concept) </h1>
-        <img src={"/image/project-2.png"} style={{width: '100%'}} />
+        <img src={"/image/vespa.png"} style={{width: '100%'}} />
       </div>
       <div
         style={{
