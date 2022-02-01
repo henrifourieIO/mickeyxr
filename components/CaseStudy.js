@@ -16,7 +16,7 @@ export default function CaseStudy({
       <Fade>
         <div className={`${styles.caseGrid}`} style={{ marginBottom: "3em" }}>
           <div>
-            <Image src="/image/yebo-1.png" layout="fill" objectFit="contain" />
+            <img src="/image/yebo-1.png" style={{width: '100%'}} />
           </div>
           <div>
             <h2>{aboutTitle}</h2>

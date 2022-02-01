@@ -97,6 +97,8 @@
 }
 
 
+
+
 .caseGrid div:first-child, .caseGrid2 div:last-child {
     position: relative; 
     display: flex; 
@@ -146,13 +148,22 @@
         display: flex; 
         justify-content: center; 
         align-items: center; 
-        width: 100%; 
-        height: 194px;
+        width: 100%;
     }
 
     .cardGrid {
         gap: 8%;
-      }
+    }
+
+    .caseGrid div:first-child {
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+    }
+
+      .caseGrid img {
+        width: 100%;
+    }
     
       .techTable {
         width: 90%;
